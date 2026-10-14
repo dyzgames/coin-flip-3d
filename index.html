@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lanza una moneda 3D con física realista: cara, cruz o lado." />
+    <title>Cara, Cruz o Lado — Moneda 3D</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="scene"></canvas>
+
+      <header class="topbar">
+        <span class="brand">Cara &amp; Cruz</span>
+        <button id="soundToggle" class="icon-btn" type="button" aria-label="Silenciar sonido" aria-pressed="false">
+          <svg viewBox="0 0 24 24" class="icon-sound-on" aria-hidden="true"><path d="M3 10v4h4l5 5V5L7 10H3z"/><path d="M16.5 12a4.5 4.5 0 0 0-2.5-4.03v8.06A4.5 4.5 0 0 0 16.5 12z"/><path d="M14 4.5v2.06c2.89.86 5 3.54 5 6.44s-2.11 5.58-5 6.44v2.06c4.01-.91 7-4.49 7-8.5s-2.99-7.59-7-8.5z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon-sound-off" aria-hidden="true"><path d="M3 10v4h4l5 5V5L7 10H3z"/><path d="M19 8.5l-1.41-1.41L15 9.68V6.5l-2-2v15l2-2v-3.18l2.59 2.59L19 15.5 16.41 12 19 8.5z"/></svg>
+        </button>
+      </header>
+
+      <main class="stage" aria-hidden="true"></main>
+
+      <section class="hud" aria-live="polite">
+        <div class="result-card" id="resultCard">
+          <span class="result-label" id="resultLabel">Preparada</span>
+          <span class="result-sub" id="resultSub">Toca la moneda o pulsa lanzar</span>
+        </div>
+
+        <div class="stats" id="stats">
+          <div class="stat"><span class="stat-value" id="statCara">0</span><span class="stat-name">Cara</span></div>
+          <div class="stat"><span class="stat-value" id="statCruz">0</span><span class="stat-name">Cruz</span></div>
+          <div class="stat"><span class="stat-value" id="statLado">0</span><span class="stat-name">Lado</span></div>
+        </div>
+
+        <div class="controls">
+          <button id="flipBtn" class="flip-btn" type="button">Lanzar moneda</button>
+          <button id="resetBtn" class="ghost-btn" type="button">Reiniciar estadísticas</button>
+        </div>
+      </section>
+
+      <p class="hint" id="hint">Arrastra para girar la cámara &middot; pulsa la moneda para lanzarla</p>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
